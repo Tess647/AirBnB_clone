@@ -1,5 +1,4 @@
 # AirBnB clone - The console
- <img src="img/hbnb_screenshot.png" alt="cover" />
 
 ## Description
 
@@ -66,5 +65,3 @@ The test for the classes are in the [test_models](./tests/test_models/) folder.
 ## Author 
 
 - **Taslihah Thanni** - [tessybadru@gmail.com](https://github.com/tess647):
-
-<img align="center" src="img/unnamed.png" alt="footer" width="150"  height="150"/>
