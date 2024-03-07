@@ -23,26 +23,27 @@ class BaseModel:
                     self.__dict__[kw] = datetime.strptime(value, time_format)
                 else:
                     self.__dict__[kw] = value
-        else:
-            models.storage.new(self)
+        #else:
+         #   models.storage.new(self)
 
     def save(self):
         """Updates updated_at with the current datetime."""
         self.updated_at = datetime.today()
+        #models.storage.save()
     
     def to_dict(self):
         """Returns a dictionary of the BaseModel instance.
         Includes the key/value pair __class__ representing
         the class name of the object.
         """
-        dictionary = self.__dict__.copy()
-        dictionary["created_at"] = self.created_at.iosformat()
-        dictionary["updated_at"] = self.updated_at.isoformat()
-        dictionary["__class__"] = self.__class__.__name__
-        return dictionary
+        copyDict = self.__dict__.copy()
+        copyDict["created_at"] = self.created_at.iosformat()
+        copyDict["updated_at"] = self.updated_at.isoformat()
+        copyDict["__class__"] = self.__class__.__name__
+        return copyDict
     
     def __str__(self):
         """Return the str representation of the BaseModel instance."""
 
         className = self.__class__.__name__
-        return "[{}] ({}) {}".format(className, self.id, self.__dict__)
+        return f"[{className}] ({self.id}) {self.__dict__}"
