@@ -24,7 +24,7 @@ class BaseModel:
                 else:
                     self.__dict__[kw] = value
         else:
-           models.storage.new(self)
+            models.storage.new(self)
 
     def save(self):
         """Updates updated_at with the current datetime."""
@@ -41,7 +41,7 @@ class BaseModel:
         copyDict["updated_at"] = self.updated_at.isoformat()
         copyDict["__class__"] = self.__class__.__name__
         return copyDict
-    
+
     def __str__(self):
         """Return the str representation of the BaseModel instance."""
 
